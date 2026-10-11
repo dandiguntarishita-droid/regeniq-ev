@@ -1,0 +1,185 @@
+
+.founder-section {
+  min-height: 80vh;
+  padding: 100px 6%;
+  color: #f3f7f4;
+  background:
+    radial-gradient(
+      ellipse at 15% 15%,
+      rgba(28, 180, 111, 0.12),
+      transparent 45%
+    ),
+    #080d0b;
+}
+
+.founder-container {
+  width: 100%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.founder-heading {
+  margin-bottom: 42px;
+  text-align: center;
+}
+
+.founder-eyebrow,
+.founder-role {
+  color: #4de2a0;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.founder-heading h2 {
+  margin: 18px 0;
+  font-size: clamp(32px, 5vw, 52px);
+}
+
+.founder-heading h2 span {
+  color: #4de2a0;
+}
+
+.founder-heading > p {
+  color: #a7b5ad;
+  line-height: 1.8;
+}
+
+.founder-card {
+  padding: clamp(24px, 5vw, 50px);
+  border: 1px solid rgba(77, 226, 160, 0.22);
+  border-radius: 20px;
+  background: rgba(17, 26, 21, 0.9);
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.2);
+}
+
+.founder-identity {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.founder-monogram {
+  display: grid;
+  flex-shrink: 0;
+  width: 115px;
+  height: 115px;
+  place-items: center;
+  border: 1px solid rgba(77, 226, 160, 0.55);
+  border-radius: 24px;
+  color: #4de2a0;
+  background: rgba(77, 226, 160, 0.08);
+  font-size: 42px;
+  font-weight: 800;
+}
+
+.founder-name h3 {
+  margin: 10px 0;
+  font-size: clamp(23px, 4vw, 34px);
+}
+
+.founder-name p {
+  margin: 7px 0;
+  color: #a7b5ad;
+  line-height: 1.6;
+}
+
+.founder-student-badge {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 12px;
+  border: 1px solid rgba(77, 226, 160, 0.3);
+  border-radius: 20px;
+  color: #4de2a0;
+  font-size: 12px;
+}
+
+.founder-divider {
+  height: 1px;
+  margin: 35px 0;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.founder-bio h4 {
+  margin: 28px 0 12px;
+  color: #4de2a0;
+  font-size: 19px;
+}
+
+.founder-bio > p {
+  color: #bdc8c1;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.founder-focus {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 35px;
+}
+
+.founder-focus > div {
+  padding: 22px;
+  border: 1px solid rgba(255, 255, 255, 0.09);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.founder-focus-number {
+  display: block;
+  margin-bottom: 15px;
+  color: #4de2a0;
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.founder-focus strong {
+  display: block;
+  line-height: 1.5;
+}
+
+.founder-focus p {
+  margin-bottom: 0;
+  color: #a7b5ad;
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.founder-signoff {
+  margin-top: 35px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.founder-signoff span {
+  color: #4de2a0;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.founder-signoff p {
+  color: #a7b5ad;
+}
+
+@media (max-width: 680px) {
+  .founder-section {
+    padding: 65px 5%;
+  }
+
+  .founder-identity {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .founder-focus {
+    grid-template-columns: 1fr;
+  }
+
+  .founder-monogram {
+    width: 85px;
+    height: 85px;
+    border-radius: 18px;
+    font-size: 32px;
+  }
+}

@@ -1,3 +1,5 @@
+
+import FounderSection from "./components/FounderSection";
 import { useEffect, useState } from "react";
 import {
   ArrowRight,
@@ -29,6 +31,7 @@ type Page =
   | "intelligence"
   | "research"
   | "about"
+  | "founder"
   | "sustainability"
   | "partners"
   | "contact";
@@ -39,6 +42,7 @@ const navItems: { id: Page; label: string }[] = [
   { id: "intelligence", label: "AI Intelligence" },
   { id: "research", label: "R&D Roadmap" },
   { id: "about", label: "About Us" },
+  { id: "founder", label: "Founder & CEO" },
   { id: "sustainability", label: "Sustainability" },
   { id: "partners", label: "Partners" },
   { id: "contact", label: "Contact" },
@@ -162,11 +166,7 @@ function Button({
   return (
     <button
       type="button"
-      className={
-        secondary
-          ? "button button-secondary"
-          : "button button-primary"
-      }
+      className={secondary ? "button button-secondary" : "button button-primary"}
       onClick={onClick}
     >
       {children}
@@ -206,11 +206,7 @@ function Navbar({ page }: { page: Page }) {
           <button
             type="button"
             key={item.id}
-            className={
-              page === item.id
-                ? "nav-link nav-active"
-                : "nav-link"
-            }
+            className={page === item.id ? "nav-link nav-active" : "nav-link"}
             onClick={() => navigate(item.id)}
           >
             {item.label}
@@ -254,10 +250,7 @@ function Footer() {
             </span>
           </button>
 
-          <p className="footer-tagline">
-            Recover. Recharge. Reinvent.
-          </p>
-
+          <p className="footer-tagline">Recover. Recharge. Reinvent.</p>
           <p className="muted">
             Developing a more energy-aware future for electric mobility.
           </p>
@@ -265,7 +258,7 @@ function Footer() {
 
         <div className="footer-nav">
           <b>Explore</b>
-          {navItems.slice(1, 5).map((item) => (
+          {navItems.slice(1, 6).map((item) => (
             <button
               type="button"
               key={item.id}
@@ -278,29 +271,21 @@ function Footer() {
 
         <div className="footer-nav">
           <b>Connect</b>
-          <button
-            type="button"
-            onClick={() => navigate("partners")}
-          >
+          <button type="button" onClick={() => navigate("partners")}>
             Partnerships
           </button>
-          <button
-            type="button"
-            onClick={() => navigate("contact")}
-          >
+          <button type="button" onClick={() => navigate("contact")}>
             Contact the team
           </button>
-          <a href="mailto:regeniq.ev@gmail.com">
-            regeniq.ev@gmail.com
-          </a>
+          <a href="mailto:regeniq.ev@gmail.com">regeniq.ev@gmail.com</a>
         </div>
       </div>
 
       <div className="footer-bottom">
         <span>© {new Date().getFullYear()} REGENIQ-EV</span>
         <span>
-          Research and development concept. Capabilities remain subject
-          to validation.
+          Research and development concept. Capabilities remain subject to
+          validation.
         </span>
       </div>
     </footer>
@@ -323,25 +308,20 @@ function Home() {
           </h1>
 
           <p className="hero-lead">
-            Recover energy. Understand every journey. Rethink electric
-            mobility.
+            Recover energy. Understand every journey. Rethink electric mobility.
           </p>
 
           <p className="hero-description">
-            REGENIQ-EV is developing a multi-source energy recovery
-            concept with intelligent energy management for a more
-            energy-aware driving experience.
+            REGENIQ-EV is developing a multi-source energy recovery concept with
+            intelligent energy management for a more energy-aware driving
+            experience.
           </p>
 
           <div className="hero-actions">
             <Button onClick={() => navigate("technology")}>
               Explore our technology <ArrowRight size={17} />
             </Button>
-
-            <Button
-              secondary
-              onClick={() => navigate("about")}
-            >
+            <Button secondary onClick={() => navigate("about")}>
               Discover our vision
             </Button>
           </div>
@@ -382,9 +362,7 @@ function Home() {
             <Waves size={16} /> Vibration
           </div>
 
-          <div className="art-bottom-label">
-            RECOVER · MONITOR · OPTIMISE
-          </div>
+          <div className="art-bottom-label">RECOVER · MONITOR · OPTIMISE</div>
         </div>
 
         <div className="hero-bottom">
@@ -402,8 +380,8 @@ function Home() {
           <span>One intelligent vision.</span>
         </h2>
         <p>
-          Connecting energy recovery, measurement and AI-assisted insight
-          in one developing mobility concept.
+          Connecting energy recovery, measurement and AI-assisted insight in one
+          developing mobility concept.
         </p>
       </section>
 
@@ -430,11 +408,9 @@ function Home() {
                   <span>{item.number} / 03</span>
                   <Icon size={25} />
                 </div>
-
                 <span className="card-tag">{item.tag}</span>
                 <h3>{item.name}</h3>
                 <p>{item.description}</p>
-
                 <button
                   type="button"
                   className="text-link"
@@ -451,19 +427,16 @@ function Home() {
       <section className="section intelligence-band">
         <div className="intelligence-copy">
           <Eyebrow>THE INTELLIGENCE LAYER</Eyebrow>
-
           <h2>
             From energy signals
             <br />
             to informed decisions.
           </h2>
-
           <p>
-            Explore how measured energy, journey context, weather and
-            battery limits could inform useful insights—while safety
-            controls remain in charge.
+            Explore how measured energy, journey context, weather and battery
+            limits could inform useful insights—while safety controls remain in
+            charge.
           </p>
-
           <Button onClick={() => navigate("intelligence")}>
             Explore AI intelligence <ArrowRight size={17} />
           </Button>
@@ -495,10 +468,7 @@ function Home() {
           ))}
         </div>
 
-        <Button
-          secondary
-          onClick={() => navigate("research")}
-        >
+        <Button secondary onClick={() => navigate("research")}>
           View development roadmap <ArrowRight size={16} />
         </Button>
       </section>
@@ -526,9 +496,7 @@ function Architecture() {
 
       {stages.map((stage, index) => (
         <div className="architecture-item" key={stage}>
-          <span className="architecture-index">
-            0{index + 1}
-          </span>
+          <span className="architecture-index">0{index + 1}</span>
           <span>{stage}</span>
           {index < stages.length - 1 && <ChevronRight size={16} />}
         </div>
@@ -538,9 +506,7 @@ function Architecture() {
         <ShieldCheck size={21} />
         <div>
           <b>Battery safety authority</b>
-          <small>
-            Independent battery limits must remain enforced.
-          </small>
+          <small>Independent battery limits must remain enforced.</small>
         </div>
       </div>
     </div>
@@ -584,14 +550,8 @@ function PageLayout({
 }) {
   return (
     <>
-      <PageHero
-        eyebrow={eyebrow}
-        title={title}
-        intro={intro}
-      />
-      <section className="section page-content">
-        {children}
-      </section>
+      <PageHero eyebrow={eyebrow} title={title} intro={intro} />
+      <section className="section page-content">{children}</section>
     </>
   );
 }
@@ -632,9 +592,9 @@ function Technology() {
         <p>
           <b>Engineering before claims</b>
           <br />
-          Combining energy sources requires compatible electrical
-          interfaces, measured power output, conversion electronics and
-          validated protection. All real systems have limits and losses.
+          Combining energy sources requires compatible electrical interfaces,
+          measured power output, conversion electronics and validated
+          protection. All real systems have limits and losses.
         </p>
       </div>
 
@@ -643,7 +603,6 @@ function Technology() {
         title="How the concept connects"
         description="This is a proposed architecture, not a claim that every component is integrated into a validated vehicle."
       />
-
       <Architecture />
     </PageLayout>
   );
@@ -691,9 +650,7 @@ function Intelligence() {
 
           return (
             <article className="feature-card" key={feature.title}>
-              <span className="feature-index">
-                0{index + 1}
-              </span>
+              <span className="feature-index">0{index + 1}</span>
               <Icon size={26} />
               <h3>{feature.title}</h3>
               <p>{feature.text}</p>
@@ -734,8 +691,8 @@ function Research() {
         <p>
           <b>Development transparency</b>
           <br />
-          The following milestones are proposed stages, not confirmation
-          that they have already been completed.
+          The following milestones are proposed stages, not confirmation that
+          they have already been completed.
         </p>
       </div>
 
@@ -757,8 +714,8 @@ function Research() {
         <p>
           <b>Evidence and validation</b>
           <br />
-          Test methods, measured data, limitations and validation status
-          should be published only when reliable results become available.
+          Test methods, measured data, limitations and validation status should
+          be published only when reliable results become available.
         </p>
       </div>
     </PageLayout>
@@ -781,9 +738,7 @@ function About() {
       <div className="mission-grid">
         <article className="mission-card">
           <Eyebrow>OUR MISSION</Eyebrow>
-          <h2>
-            Help electric vehicles use energy more intelligently.
-          </h2>
+          <h2>Help electric vehicles use energy more intelligently.</h2>
           <p>
             Develop technologies that make energy flows easier to measure,
             understand and manage.
@@ -800,10 +755,7 @@ function About() {
         </article>
       </div>
 
-      <Heading
-        eyebrow="OUR PRINCIPLES"
-        title="Ambition, grounded in engineering."
-      />
+      <Heading eyebrow="OUR PRINCIPLES" title="Ambition, grounded in engineering." />
 
       <div className="feature-grid">
         <article className="feature-card">
@@ -819,8 +771,8 @@ function About() {
           <Target size={26} />
           <h3>Measure honestly</h3>
           <p>
-            Use transparent methods and real results instead of
-            unsupported claims.
+            Use transparent methods and real results instead of unsupported
+            claims.
           </p>
         </article>
 
@@ -893,8 +845,8 @@ function Sustainability() {
           <b>Impact must be demonstrated</b>
           <br />
           Environmental benefits depend on measured energy yield,
-          manufacturing, vehicle integration, lifetime and the energy
-          source displaced.
+          manufacturing, vehicle integration, lifetime and the energy source
+          displaced.
         </p>
       </div>
     </PageLayout>
@@ -1007,9 +959,7 @@ function Contact() {
       return;
     }
 
-    const subject = encodeURIComponent(
-      `REGENIQ-EV enquiry: ${form.topic}`
-    );
+    const subject = encodeURIComponent(`REGENIQ-EV enquiry: ${form.topic}`);
 
     const body = encodeURIComponent(
       `Name: ${form.name}\nEmail: ${form.email}\nOrganisation: ${form.organisation}\nTopic: ${form.topic}\n\n${form.message}`
@@ -1039,17 +989,13 @@ function Contact() {
         <div className="contact-info">
           <Eyebrow>GET IN TOUCH</Eyebrow>
           <h2>Good ideas grow through collaboration.</h2>
-          <p>
-            Share your enquiry and the area you'd like to discuss.
-          </p>
+          <p>Share your enquiry and the area you'd like to discuss.</p>
 
           <div className="contact-detail">
             <Mail />
             <div>
               <small>BUSINESS ENQUIRIES</small>
-              <a href="mailto:regeniq.ev@gmail.com">
-                regeniq.ev@gmail.com
-              </a>
+              <a href="mailto:regeniq.ev@gmail.com">regeniq.ev@gmail.com</a>
             </div>
           </div>
 
@@ -1065,9 +1011,7 @@ function Contact() {
             <ShieldCheck />
             <div>
               <small>PRIVACY</small>
-              <b>
-                Details are used to prepare your enquiry email.
-              </b>
+              <b>Details are used to prepare your enquiry email.</b>
             </div>
           </div>
         </div>
@@ -1113,11 +1057,7 @@ function Contact() {
 
           <label>
             Enquiry type
-            <select
-              name="topic"
-              value={form.topic}
-              onChange={update}
-            >
+            <select name="topic" value={form.topic} onChange={update}>
               <option>Partnership</option>
               <option>Investment</option>
               <option>Research collaboration</option>
@@ -1146,8 +1086,8 @@ function Contact() {
               checked={consent}
               onChange={(event) => setConsent(event.target.checked)}
             />
-            I agree that my details may be used to prepare a response
-            to this enquiry.
+            I agree that my details may be used to prepare a response to this
+            enquiry.
           </label>
 
           <button
@@ -1177,18 +1117,15 @@ function CallToAction() {
   return (
     <section className="cta-section">
       <Eyebrow>THE NEXT CHAPTER</Eyebrow>
-
       <h2>
         Let's rethink what
         <br />
         energy can do.
       </h2>
-
       <p>
-        We welcome conversations with researchers, engineering teams,
-        EV companies and potential collaborators.
+        We welcome conversations with researchers, engineering teams, EV
+        companies and potential collaborators.
       </p>
-
       <Button onClick={() => navigate("partners")}>
         Explore collaboration <ArrowRight size={17} />
       </Button>
@@ -1200,9 +1137,7 @@ export default function App() {
   const [page, setPage] = useState<Page>(() => {
     const hash = window.location.hash.slice(1) as Page;
 
-    return navItems.some((item) => item.id === hash)
-      ? hash
-      : "home";
+    return navItems.some((item) => item.id === hash) ? hash : "home";
   });
 
   useEffect(() => {
@@ -1235,6 +1170,7 @@ export default function App() {
     intelligence: <Intelligence />,
     research: <Research />,
     about: <About />,
+    founder: <FounderSection />,
     sustainability: <Sustainability />,
     partners: <Partners />,
     contact: <Contact />,
@@ -1243,11 +1179,8 @@ export default function App() {
   return (
     <div className="site-shell">
       <Navbar page={page} />
-
       {page === "home" && <PrototypeVisual />}
-
       <main key={page}>{content[page]}</main>
-
       <Footer />
     </div>
   );
