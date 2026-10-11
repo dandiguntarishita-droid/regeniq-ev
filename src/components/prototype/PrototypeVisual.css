@@ -1,0 +1,96 @@
+
+
+.prototype-section {
+  padding: 60px 7%;
+  color: #e9fbff;
+  background: radial-gradient(ellipse at top, #123447 0%, #08121c 60%, #050a10 100%);
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.prototype-heading {
+  max-width: 760px;
+  margin: 0 auto 28px;
+  text-align: center;
+}
+
+.prototype-tag {
+  color: #42e8f5;
+  font-size: 12px;
+  letter-spacing: 3px;
+  font-weight: 700;
+}
+
+.prototype-heading h2 {
+  margin: 12px 0;
+  font-size: clamp(28px, 4vw, 48px);
+  line-height: 1.15;
+}
+
+.prototype-heading p {
+  color: #a9c6d3;
+  line-height: 1.7;
+}
+
+.prototype-car {
+  max-width: 850px;
+  margin: 20px auto 36px;
+}
+
+.prototype-car svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  filter: drop-shadow(0 12px 28px #08d9ef25);
+}
+
+.prototype-cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.prototype-card {
+  padding: 24px;
+  border: 1px solid #245367;
+  border-radius: 16px;
+  background: #0c1d2a;
+}
+
+.prototype-card span {
+  color: #42e8f5;
+  font-size: 11px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+.prototype-card h3 {
+  margin: 14px 0 8px;
+  color: #f2fdff;
+  font-size: 20px;
+}
+
+.prototype-card p {
+  margin: 0;
+  color: #a9c6d3;
+  line-height: 1.7;
+  font-size: 14px;
+}
+
+.prototype-note {
+  margin-top: 24px;
+  color: #8aa6b5;
+  font-size: 12px;
+  text-align: center;
+  line-height: 1.6;
+}
+
+@media (max-width: 700px) {
+  .prototype-section {
+    padding: 36px 18px;
+  }
+
+  .prototype-cards {
+    grid-template-columns: 1fr;
+  }
+}
